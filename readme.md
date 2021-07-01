@@ -1,6 +1,6 @@
 # lets learn about AWS step functions 
 
-![AWS_StepFunction_icon](assets\stepfunctions_icon.png)
+![AWS_StepFunction_icon](assets/stepfunctions_icon.png)
 
 ## Intro: what are AWS Stepfunctions? 
 
@@ -41,11 +41,11 @@ AWS step functions allows you to create a State Machine, a series of steps or 's
 
 **traditionally** -  [Amazon states language](https://states-language.net/spec.html) 
 
-![](assets\statemachine builder.png)
+![](assets/statemachine builder.png)
 
 **new this month** - Workflow studio GUI
 
-![](assets\workflow studio.png)
+![](assets/workflow studio.png)
 
 
 
@@ -59,7 +59,7 @@ we will now create a demo step function that will call one of two lambda functio
 4. create state machine
 5. test state machine
 
-![](assets\demo_workflow.png)
+![](assets/demo_workflow.png)
 
 ## Discussion
 
