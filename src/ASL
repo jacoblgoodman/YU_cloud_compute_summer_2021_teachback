@@ -1,0 +1,42 @@
+{
+  "Comment": "A simple AWS Step Functions state machine that runs lambda functions and then emails status",
+  "StartAt": "ProcessTransaction",
+  "States": {
+    "ProcessTransaction": {
+        "Type" : "Choice",
+        "Choices": [ 
+          {
+            "Variable": "$.TransactionType",
+            "StringEquals": "PURCHASE",
+            "Next": "ProcessPurchase"
+          },
+          {
+            "Variable": "$.TransactionType",
+            "StringEquals": "REFUND",
+            "Next": "ProcessRefund"
+          }
+      ]
+    },
+     "ProcessRefund": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:FUNCTION_NAME",
+      "Next": "BroadcastToSns"
+    },
+    "ProcessPurchase": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:FUNCTION_NAME",
+      "Next": "BroadcastToSns"
+    },
+  "BroadcastToSns":{ 
+         "Type":"Task",
+         "Resource":"arn:aws:states:::sns:publish",
+         "Parameters":{ 
+            "TopicArn":"Replace Me!",
+            "Message":{ 
+               "Transactiontype.$":"$.TransactionType",
+               "Message.$":"$.body",
+               "when.$": "$.Timestamp"}},
+              "End": true
+    }
+  }
+}
