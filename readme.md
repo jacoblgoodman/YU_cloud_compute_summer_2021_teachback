@@ -41,11 +41,11 @@ AWS step functions allows you to create a State Machine, a series of steps or 's
 
 **traditionally** -  [Amazon states language](https://states-language.net/spec.html) 
 
-![](assets/statemachine builder.png)
+![](assets/statemachine_builder.png)
 
 **new this month** - Workflow studio GUI
 
-![](assets/workflow studio.png)
+![](assets/workflow_studio.png)
 
 
 
