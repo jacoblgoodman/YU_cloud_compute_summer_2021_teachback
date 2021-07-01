@@ -19,12 +19,14 @@
     },
      "ProcessRefund": {
       "Type": "Task",
-      "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:FUNCTION_NAME",
+      "Resource": "arn:aws:lambda:.....FUNCTION_NAME",
+      "Comment": "don't forget to update the resouce field above with your lambda function arn",
       "Next": "BroadcastToSns"
     },
     "ProcessPurchase": {
       "Type": "Task",
-      "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:FUNCTION_NAME",
+      "Resource": "arn:aws:lambda:.....FUNCTION_NAME",
+      "Comment": "don't forget to update the resouce field above with your lambda function arn",
       "Next": "BroadcastToSns"
     },
   "BroadcastToSns":{ 
